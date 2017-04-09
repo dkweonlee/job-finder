@@ -1,0 +1,13 @@
+<h1><%= @post.title %></h1><br>
+<hr>
+  <p><%= simple_format @post.descripition %></p>
+  <%= link_to "#{@post.user.name}", user_path(@post.user_id)  %>
+<hr>
+
+<% @comments.map do |comment| %>
+  <%= comment.user.name %>: <%= comment.comment %> <%= link_to "Edit", edit_post_comment_path(post_id: @post.id, id: comment.id) %>, <%= link_to 'Delete',  post_comment_path(post_id: @post.id, id: comment.id),  method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<% end %><br>
+
+  <%= link_to 'Edit Post', edit_post_path %>
+  <%= link_to 'Delete Post',  post_path,  method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Add Commment', new_post_comment_path(@post.id) %>

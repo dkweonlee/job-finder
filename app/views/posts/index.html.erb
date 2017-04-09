@@ -1,0 +1,15 @@
+
+
+<div class="container">
+  <h2>Posts</h2>
+  <table class="hovertable">
+    <tr>
+      <th>Id</th><th>Title</th><th>Type</th><th>Level</th><th>Company</th><th>Location</th><th>Author</th>
+    </tr>
+    <% @posts.map do |post| %>
+      <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+        <td><%= "#{post.id}" %></td><td><%= link_to "#{post.title}", post_path(post.id) %></td><td><%= "#{post.job_type}" %></td><td><%= "#{post.level}" %></td><td><%= "#{post.name}" %></td><td><%= "#{post.location}" %></td><td><%= link_to "#{post.user.name}", user_path(post.user_id)  %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

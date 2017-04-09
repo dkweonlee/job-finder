@@ -3,8 +3,8 @@ class PostComments < ActiveRecord::Migration[5.0]
     create_table :posts do |t|
       t.string :name
       t.string :title
-      t.text :description
-      t.string :type
+      t.text :descripition
+      t.string :job_type
       t.string :level
       t.string :location
       t.belongs_to :user

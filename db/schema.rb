@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 20170409014927) do
   create_table "posts", force: :cascade do |t|
     t.string  "name"
     t.string  "title"
-    t.text    "description"
-    t.string  "type"
+    t.text    "descripition"
+    t.string  "job_type"
     t.string  "level"
     t.string  "location"
     t.integer "user_id"
